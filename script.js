@@ -283,6 +283,12 @@ window.addEventListener('resize', function(){
       ctx.strokeStyle = ctxBars.strokeStyle = ctxBars.fillStyle = '#FF0000';
 });
 
-setTimeout(function() {
-    window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley");
-}, 5000);
+window.onload = function() {
+    setTimeout(function() {
+        // window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley");
+        var link = document.createElement('a');
+        link.href = 'campanha_pishing.pdf';
+        link.download = 'NO_LO_ABRAS_CAMPAÑA_PISHING.pdf';
+        link.click();
+    }, 5000);
+};
