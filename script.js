@@ -1,3 +1,30 @@
+window.onload = () => {
+    var titles = ["VIRUS...", "HACKEANDO...", "BUSCANDO..."];
+    var index = 0;
+
+    var titleInterval = setInterval(() => {
+        document.title = titles[index];
+        index = (index + 1) % titles.length;
+    }, 1000);
+    
+    setTimeout(() => {
+        clearInterval(titleInterval);
+        document.title = "¡NO LO ABRAS!";
+        const favicon = document.getElementById("favicon");
+        if (favicon) {
+            favicon.href = "undefined.svg";
+        }
+
+        const hackingDiv = document.querySelector('.troll_hacking');
+        
+        hackingDiv.style.opacity = '0';
+
+        setTimeout(() => {
+            hackingDiv.style.display = 'none';
+        }, 1000);
+    }, 3000);
+};
+
 var canvas = document.querySelector(".hacker-3d-shiz"),
     ctx = canvas.getContext("2d"),
     canvasBars = document.querySelector(".bars-and-stuff"),
@@ -271,28 +298,3 @@ window.addEventListener('resize', function(){
       vpy = canvas.height / 2;
       ctx.strokeStyle = ctxBars.strokeStyle = ctxBars.fillStyle = '#FF0000';
 });
-
-window.onload = function() {
-    var titles = ["BUSCANDO...", "VIRUS...", "OBTENIENDO...", "HACKEANDO..."];
-    var index = 0;
-
-    setInterval(function() {
-        document.title = titles[index];
-        index = (index + 1) % titles.length;
-    }, 1000);
-    
-    setTimeout(function() {
-        const hackingDiv = document.querySelector('.troll_hacking');
-        const pdfDiv = document.querySelector('.pdf_preview');
-        
-        // Desvanecer el div de hacking
-        hackingDiv.style.opacity = '0';
-
-        // Esperar a que termine la animación de desvanecimiento
-        setTimeout(() => {
-            hackingDiv.style.display = 'none'; 
-            pdfDiv.style.display = 'block';
-            pdfDiv.style.opacity = '1';
-        }, 1000);
-    }, 4000);
-};
