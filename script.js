@@ -1,11 +1,3 @@
-var titles = ["BUSCANDO...", "VIRUS...", "OBTENIENDO...", "HACKEANDO..."];
-        var index = 0;
-
-        setInterval(function() {
-            document.title = titles[index];
-            index = (index + 1) % titles.length;
-        }, 1000);
-
 var canvas = document.querySelector(".hacker-3d-shiz"),
     ctx = canvas.getContext("2d"),
     canvasBars = document.querySelector(".bars-and-stuff"),
@@ -20,7 +12,6 @@ canvasBars.height = canvas.height;
 
 outputConsole.style.height = (window.innerHeight / 3) * 2 + 'px';
 outputConsole.style.top = window.innerHeight / 3 + 'px'
-
 
 /* Graphics stuff */
 function Square(z) {
@@ -159,7 +150,6 @@ var commandStart = ['Performing DNS Lookups for',
     processTime = 0,
     lastProcess = 0;
 
-
 function render() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -242,7 +232,6 @@ function consoleOutput(){
     setTimeout(consoleOutput, ~~(Math.random()*200));
 }
 
-
 setTimeout(function(){   
       canvas.width = (window.innerWidth/3)*2;
       canvas.height = window.innerHeight / 3;
@@ -284,11 +273,26 @@ window.addEventListener('resize', function(){
 });
 
 window.onload = function() {
+    var titles = ["BUSCANDO...", "VIRUS...", "OBTENIENDO...", "HACKEANDO..."];
+    var index = 0;
+
+    setInterval(function() {
+        document.title = titles[index];
+        index = (index + 1) % titles.length;
+    }, 1000);
+    
     setTimeout(function() {
-        // window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley");
-        var link = document.createElement('a');
-        link.href = 'campanha_pishing.pdf';
-        link.download = 'NO_LO_ABRAS_CAMPAÑA_PISHING.pdf';
-        link.click();
-    }, 5000);
+        const hackingDiv = document.querySelector('.troll_hacking');
+        const pdfDiv = document.querySelector('.pdf_preview');
+        
+        // Desvanecer el div de hacking
+        hackingDiv.style.opacity = '0';
+
+        // Esperar a que termine la animación de desvanecimiento
+        setTimeout(() => {
+            hackingDiv.style.display = 'none'; 
+            pdfDiv.style.display = 'block';
+            pdfDiv.style.opacity = '1';
+        }, 1000);
+    }, 4000);
 };
