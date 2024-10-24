@@ -12,7 +12,7 @@ window.onload = () => {
         document.title = "¡NO LO ABRAS!";
         const favicon = document.getElementById("favicon");
         if (favicon) {
-            favicon.href = "favicon.svg";
+            favicon.href = "favicon.ico";
         }
 
         const hackingDiv = document.querySelector('.troll_hacking');
@@ -26,10 +26,10 @@ window.onload = () => {
 };
 
 var canvas = document.querySelector(".hacker-3d-shiz"),
-    ctx = canvas.getContext("2d"),
-    canvasBars = document.querySelector(".bars-and-stuff"),
-    ctxBars = canvasBars.getContext("2d"),
-    outputConsole = document.querySelector(".output-console");
+ctx = canvas.getContext("2d"),
+canvasBars = document.querySelector(".bars-and-stuff"),
+ctxBars = canvasBars.getContext("2d"),
+outputConsole = document.querySelector(".output-console");
 
 canvas.width = (window.innerWidth/3)*2;
 canvas.height = window.innerHeight / 3;
