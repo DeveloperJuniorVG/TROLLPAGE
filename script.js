@@ -12,7 +12,7 @@ window.onload = () => {
         document.title = "¡NO LO ABRAS!";
         const favicon = document.getElementById("favicon");
         if (favicon) {
-            favicon.href = "undefined.svg";
+            favicon.href = "favicon.svg";
         }
 
         const hackingDiv = document.querySelector('.troll_hacking');
